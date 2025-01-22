@@ -1,41 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Menentukan tipe dokumen sebagai HTML5 -->
+<html lang="en"> <!-- Menetapkan bahasa dokumen sebagai Inggris -->
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kartu Nama</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <meta charset="UTF-8"> <!-- Menetapkan karakter encoding sebagai UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Mengatur kompatibilitas dengan Internet Explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Mengatur viewport untuk responsivitas -->
+    <title>Riccy Widjhaya - Profile</title> <!-- Judul halaman yang ditampilkan di tab browser -->
+    <link rel="stylesheet" href="style.css"> <!-- Menghubungkan file CSS untuk styling -->
 </head>
 <body>
 
-    <div class="container">
-        <div class="profile-box">
-            <img src="img/profile.jpg" class="profile">
-            <h3>Riccy Widjhaya</h3>
-            <p>Just a young kid who likes to learn</p>
-            <div class="medsos">
-                <a href="https://github.com/Riccy-AI" target="_blank">
-                    <img src="img/github.png" alt="Tautan ke GitHub">
+    <div class="container"> <!-- Kontainer utama untuk halaman profil -->
+        <div class="profile-box"> <!-- Kotak profil untuk menampilkan informasi pengguna -->
+            <img src="img/profile.jpg" class="profile" alt="Riccy Widjhaya"> <!-- Gambar profil pengguna -->
+            <h3>Riccy Widjhaya</h3> <!-- Nama pengguna -->
+            <p>Web Developer | Front-end Enthusiast | Lifelong Learner</p> <!-- Deskripsi singkat tentang pengguna -->
+
+            <div class="medsos"> <!-- Bagian untuk ikon media sosial -->
+                <a href="https://github.com/Riccy-AI" target="_blank"> <!-- Tautan ke profil GitHub -->
+                    <img src="img/github.png" alt="GitHub Profile"> <!-- Ikon GitHub -->
                 </a>
-                <a href="https://www.instagram.com/riccywidjhaya/" target="_blank">
-                    <img src="img/instagram.png" alt="Tautan ke Instagram">
+                <a href="https://www.instagram.com/riccywidjhaya/" target="_blank"> <!-- Tautan ke profil Instagram -->
+                    <img src="img/instagram.png" alt="Instagram Profile"> <!-- Ikon Instagram -->
                 </a>
-                <a href="https://www.tiktok.com/@yourmanriccy" target="_blank">
-                    <img src="img/tik-tok.png" alt="Tautan ke TikTok">
+                <a href="https://www.tiktok.com/@yourmanriccy" target="_blank"> <!-- Tautan ke profil TikTok -->
+                    <img src="img/tik-tok.png" alt="TikTok Profile"> <!-- Ikon TikTok -->
                 </a>
-                
             </div>
-            <a href="https://linktr.ee/riccywidjhaya" target="_blank">
-                <button type="button">Follow Me</button>
+
+            <!-- Bagian Keterampilan -->
+            <div class="skills">
+                <h4>Skills</h4> <!-- Judul untuk bagian keterampilan -->
+                <div class="skills-list"> <!-- Daftar keterampilan -->
+                    <div class="skill"> <!-- Keterampilan HTML -->
+                        <img src="img/html-5.png" alt="HTML5"> <!-- Ikon HTML5 -->
+                        <p>HTML5</p> <!-- Nama keterampilan -->
+                    </div>
+                    <div class="skill"> <!-- Keterampilan CSS -->
+                        <img src="img/css-3.png" alt="CSS3"> <!-- Ikon CSS3 -->
+                        <p>CSS3</p> <!-- Nama keterampilan -->
+                    </div>
+                    <div class="skill"> <!-- Keterampilan JavaScript -->
+                        <img src="img/js.png" alt="JavaScript"> <!-- Ikon JavaScript -->
+                        <p>JavaScript</p> <!-- Nama keterampilan -->
+                    </div>
+                    <div class="skill"> <!-- Keterampilan React -->
+                        <img src="img/atom.png" alt="React"> <!-- Ikon React -->
+                        <p>React</p> <!-- Nama keterampilan -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian Tentang Saya -->
+            <div class="about-me">
+                <h4>About Me</h4> <!-- Judul untuk bagian tentang saya -->
+                <p>I am a passionate web developer with expertise in front-end technologies like HTML, CSS, and JavaScript. I enjoy learning new frameworks and technologies to improve my skills.</p> <!-- Deskripsi tentang pengguna -->
+            </div>
+
+            <!-- Bagian Kontak -->
+            <a href="https://linktr.ee/riccywidjhaya" target="_blank"> <!-- Tautan untuk mengirim email -->
+                <button type="button">My Other Socials</button> <!-- Tombol untuk menghubungi pengguna -->
             </a>
+
             <div class="profile-bottom">
-                <p>HELLO WADDAP GANG!<br>
-                Here's my socials!</p>
+                <p>Feel free to reach out or connect with me on my social media!</p> <!-- Pesan untuk mengajak orang menghubungi pengguna -->
             </div>
         </div>
     </div>
-    
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Riccy Widjhaya. All rights reserved.</p> <!-- Informasi hak cipta -->
+    </footer>
+
 </body>
 </html>

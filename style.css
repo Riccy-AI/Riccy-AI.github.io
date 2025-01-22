@@ -1,90 +1,230 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;1,800&family=Paytone+One&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;0,700;1,800&family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400;1,800&display=swap'); /* Mengimpor font dari Google Fonts */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    margin: 0; /* Mengatur margin semua elemen menjadi 0 */
+    padding: 0; /* Mengatur padding semua elemen menjadi 0 */
+    box-sizing: border-box; /* Mengatur box-sizing untuk semua elemen */
+    font-family: 'Poppins', sans-serif; /* Mengatur font default */
 }
 
+body {
+    background-color: #f8f8f8; /* Mengatur warna latar belakang */
+    color: #333; /* Mengatur warna teks */
+    overflow-x: hidden; /* Menyembunyikan overflow horizontal */
+}
+
+/* Container */
 .container {
-    width: 100%;
-    height: 100vh;
-    background-image: url(/img/bg.jpg);
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%; /* Mengatur lebar kontainer menjadi 100% */
+    height: 150vh; /* Mengatur tinggi kontainer menjadi 100% dari viewport */
+    background-image: url('img/bg.jpg'); /* Mengatur gambar latar belakang */
+    background-size: cover; /* Mengatur ukuran gambar latar belakang */
+    background-position: center; /* Mengatur posisi gambar latar belakang */
+    display: flex; /* Mengatur kontainer menjadi flexbox */
+    align-items: center; /* Mengatur item untuk sejajar di tengah secara vertikal */
+    justify-content: center; /* Mengatur item untuk sejajar di tengah secara horizontal */
+    position: relative; /* Mengatur posisi relatif */
+    animation: fadeIn 1.5s ease-in-out; /* Menambahkan animasi fadeIn */
 }
 
 .profile-box {
-    background: rgba(225, 225, 225, 0.2);
-    text-align: center;
-    padding: 70px 100px;
-    color: black;
-    position: relative;
-    border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(225, 225, 225, 0.2);
+    background: rgba(255, 255, 255, 0.85); /* Mengatur latar belakang dengan transparansi */
+    text-align: center; /* Mengatur teks menjadi rata tengah */
+    padding: 50px 50px; /* Mengatur padding */
+    color: #333; /* Mengatur warna teks */
+    position: relative; /* Mengatur posisi relatif */
+    border-radius: 15px; /* Mengatur sudut melengkung */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+    backdrop-filter: blur(15px); /* Menambahkan efek blur pada latar belakang */
+    -webkit-backdrop-filter: blur(15px); /* Efek blur untuk browser WebKit */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Mengatur border */
+    max-width: 600px; /* Mengatur lebar maksimum */
+    width: 100%; /* Mengatur lebar menjadi 100% */
+    transition: transform 0.3s ease; /* Menambahkan transisi pada transformasi */
 }
 
-.menu {
-    width: 25px;
-    position: absolute;
-    left: 40px;
-    top: 40px;
-}
-
-.setting {
-    width: 25px;
-    position: absolute;
-    right: 40px;
-    top: 40px;
-}
-
+/* Gambar Profil */
 .profile {
-    width: 150px;
-    border-radius: 50%;
-    background-color: black;
-    padding: 6px;
-    margin-top: 40px;
-}
-
-.profile-bottom {
-    background: white;
-    color: black;
-    padding: 60px 0;
-    margin-right: -100px;
-    margin-left: -100px;
-    margin-bottom: -70px;
-    border-radius: 20px;
-}
-
-.profile-box button {
-    background: blue;
-    color: white;
-    border: none;
-    outline: none;
-    box-shadow: 0 5px 10px rgba(244, 67, 54, 0.5);
-    padding: 15px 60px;
-    cursor: pointer;
-    border-radius: 30px;
-    margin-bottom: -50px;
-    font-weight: 600px;
-    font-size: 16px;
+    width: 150px; /* Mengatur lebar gambar profil */
+    border-radius: 50%; /* Mengatur sudut gambar menjadi bulat */
+    background-color: #333; /* Mengatur warna latar belakang gambar */
+    padding: 8px; /* Mengatur padding */
+    margin-top: -70px; /* Mengatur margin atas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan */
+    animation: bounceIn 1s ease-in-out; /* Menambahkan animasi bounceIn */
 }
 
 .profile-box h3 {
-    font-size: 30px;
-    margin-top: 20px;
-    font-weight: 600;
+    font-size: 28px; /* Mengatur ukuran font */
+    margin-top: 20px; /* Mengatur margin atas */
+    font-weight: 600; /* Mengatur ketebalan font */
+    color: #222; /* Mengatur warna teks */
+}
+
+.profile-box h4 {
+    font-size: 28px; /* Mengatur ukuran font */
+    margin-top: 20px; /* Mengatur margin atas */
+    font-weight: 600; /* Mengatur ketebalan font */
+    color: #222; /* Mengatur warna teks */
+    text-align: center; /* Mengatur teks menjadi rata tengah */
+
+}
+
+.profile-box p {
+    font-size: 16px; /* Mengatur ukuran font */
+    color: #666; /* Mengatur warna teks */
+    margin-top: 5px; /* Mengatur margin atas */
+    text-align: center; /* Mengatur teks menjadi rata tengah */
+
+}
+
+/* Ikon Media Sosial */
+.medsos {
+    margin-top: 20px; /* Mengatur margin atas */
+}
+
+.medsos a {
+    margin: 0 10px; /* Mengatur margin horizontal */
+    display: inline-block; /* Mengatur tampilan menjadi inline-block */
+    transition: transform 0.3s ease; /* Menambahkan transisi pada transformasi */
+}
+
+.medsos a:hover {
+    transform: scale(1.1); /* Mengatur efek zoom saat hover */
 }
 
 .medsos img {
-    width: 30px;
-    margin: 30px 5px;
-    cursor: pointer;
+    width: 30px; /* Mengatur lebar ikon */
+    height: 30px; /* Mengatur tinggi ikon */
+}
+
+/* Bagian Keterampilan */
+.skills {
+    margin-top: 30px; /* Mengatur margin atas */
+    text-align: left; /* Mengatur teks menjadi rata kiri */
+    color: #333; /* Mengatur warna teks */
+}
+
+.skills h4 {
+    font-size: 20px; /* Mengatur ukuran font */
+    margin-bottom: 15px; /* Mengatur margin bawah */
+}
+
+.skills-list {
+    display: flex; /* Mengatur daftar keterampilan menjadi flexbox */
+    justify-content: center; /* Mengatur item untuk sejajar di tengah secara horizontal */
+    gap: 20px; /* Mengatur jarak antar item */
+    flex-wrap: wrap; /* Mengatur item untuk membungkus */
+}
+
+.skill {
+    text-align: center; /* Mengatur teks menjadi rata tengah */
+    width: 70px; /* Mengatur lebar keterampilan */
+    margin-bottom: 15px; /* Mengatur margin bawah */
+}
+
+.skill img {
+    width: 50px; /* Mengatur lebar ikon keterampilan */
+    height: 50px; /* Mengatur tinggi ikon keterampilan */
+    margin-bottom: 5px; /* Mengatur margin bawah */
+}
+
+.skill p {
+    font-size: 14px; /* Mengatur ukuran font */
+}
+
+/* Bagian Tentang Saya */
+.about-me {
+    margin-top: 40px; /* Mengatur margin atas */
+    padding: 15px; /* Mengatur padding */
+    background-color: rgba(255, 255, 255, 0.7); /* Mengatur latar belakang dengan transparansi */
+    border-radius: 10px; /* Mengatur sudut melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+}
+
+.about-me h4 {
+    font-size: 20px; /* Mengatur ukuran font */
+    margin-bottom: 10px; /* Mengatur margin bawah */
+}
+
+.about-me p {
+    font-size: 16px; /* Mengatur ukuran font */
+    color: #555; /* Mengatur warna teks */
+}
+
+/* Tombol Kontak Saya */
+button {
+    background: #007bff; /* Mengatur warna latar belakang tombol */
+    color: white; /* Mengatur warna teks tombol */
+    padding: 15px 60px; /* Mengatur padding */
+    border: none; /* Menghapus border */
+    border-radius: 30px; /* Mengatur sudut melengkung */
+    cursor: pointer; /* Mengubah kursor saat hover */
+    margin-top: 30px; /* Mengatur margin atas */
+    font-weight: bold; /* Mengatur ketebalan font */
+    font-size: 16px; /* Mengatur ukuran font */
+    transition: background 0.3s ease, transform 0.3s ease; /* Menambahkan transisi pada latar belakang dan transformasi */
+}
+
+button:hover {
+    background-color: #0056b3; /* Mengatur warna latar belakang saat hover */
+    transform: scale(1.05); /* Mengatur efek zoom saat hover */
+}
+
+/* Bagian Bawah Profil */
+.profile-bottom {
+    background: #fff; /* Mengatur latar belakang */
+    color: black; /* Mengatur warna teks */
+    padding: 40px 0; /* Mengatur padding */
+    margin-right: -80px; /* Mengatur margin kanan */
+    margin-left: -80px; /* Mengatur margin kiri */
+    margin-bottom: -70px; /* Mengatur margin bawah */
+    border-radius: 15px; /* Mengatur sudut melengkung */
+}
+
+/* Footer */
+footer {
+    text-align: center; /* Mengatur teks menjadi rata tengah */
+    padding: 20px; /* Mengatur padding */
+    background-color: #333; /* Mengatur warna latar belakang */
+    color: white; /* Mengatur warna teks */
+    position: fixed; /* Mengatur posisi tetap */
+    width: 100%; /* Mengatur lebar menjadi 100% */
+    bottom: 0; /* Mengatur posisi di bagian bawah */
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Mengatur transparansi awal */
+        transform: translateY(50px); /* Mengatur posisi awal */
+    }
+    100% {
+        opacity: 1; /* Mengatur transparansi akhir */
+        transform: translateY(0); /* Mengatur posisi akhir */
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0); /* Mengatur skala awal */
+    }
+    50% {
+        transform: scale(1.2); /* Mengatur skala tengah */
+    }
+    100% {
+        transform: scale(1); /* Mengatur skala akhir */
+    }
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .profile-box {
+        padding: 40px 30px; /* Mengatur padding untuk layar kecil */
+    }
+
+    .skills-list {
+        flex-direction: column; /* Mengatur arah flex menjadi kolom */
+        align-items: center; /* Mengatur item untuk sejajar di tengah secara vertikal */
+    }
 }
