@@ -35,12 +35,12 @@ body {
     position: relative; /* Mengatur posisi relatif */
     border-radius: 15px; /* Mengatur sudut melengkung */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
-    backdrop-filter: blur(15px); /* Menambahkan efek blur pada latar belakang */
-    -webkit-backdrop-filter: blur(15px); /* Efek blur untuk browser WebKit */
+    backdrop-filter: blur(3px); /* Menambahkan efek blur pada latar belakang */
+    -webkit-backdrop-filter: blur(5px); /* Efek blur untuk browser WebKit */
     border: 1px solid rgba(255, 255, 255, 0.3); /* Mengatur border */
     max-width: 600px; /* Mengatur lebar maksimum */
     width: 100%; /* Mengatur lebar menjadi 100% */
-    transition: transform 0.3s ease; /* Menambahkan transisi pada transformasi */
+    transition: transform 0.5s ease; /* Menambahkan transisi pada transformasi */
 }
 
 /* Gambar Profil */
