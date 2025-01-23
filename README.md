@@ -1,3 +1,1 @@
-# riccy-namecard.github.io
-
-Buat Belajar Sendiri Bro/sis
+This is my first ever portofolio website 🤗
