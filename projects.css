@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef; 
+    --card-width: 380px; /* Lebar kartu di desktop (Sesuai gambar referensi) */
+    --image-aspect-ratio: 150%; /* Rasio aspek potret (Vertical, Default 3:5) */
+    --horizontal-aspect-ratio: 56.25%; /* Rasio aspek horizontal (16:9) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* --- Layout Dasar --- */
+.container {
+    padding: 20px;
+}
+
+.projects-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid; 
+    /* Mengatur 3 kolom dengan lebar minimum kartu yang besar */
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr)); 
+    gap: 30px; 
+    justify-content: center; 
+}
+
+.heading, .sub-heading, .back-link {
+    grid-column: 1 / -1; 
+    width: 100%; 
+    margin-bottom: 20px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+.sub-heading {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--main-color);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    margin-left: 20px; 
+}
+.back-link:hover {
+    opacity: 0.8;
+}
+
+/* --- Project Card Styling --- */
+.project-card {
+    background: var(--second-bg-color);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 238, 255, 0.1); 
+    display: flex;
+    flex-direction: column;
+}
+
+.project-header h4 {
+    font-size: 2rem;
+    color: var(--text-color); 
+    margin-bottom: 5px;
+}
+
+.project-description {
+    font-size: 1.4rem;
+    color: #aaa;
+    margin-bottom: 20px;
+    flex-grow: 1; 
+}
+
+/* Tech Stack Badges */
+.tech-stack {
+    margin-bottom: 15px;
+}
+
+.tech-badge {
+    display: inline-block;
+    background: rgba(0, 238, 255, 0.2);
+    color: var(--main-color);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* Buttons */
+.project-links {
+    margin-top: auto; 
+    display: flex; 
+    gap: 10px;
+}
+.btn {
+    display: block;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: 0.3s;
+    flex-grow: 1; 
+    text-align: center;
+}
+
+.btn.primary {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.btn:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+
+/* --- Styling Carousel (Untuk Screenshot Mobile Vertikal - Default) --- */
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    /* DEFAULT: Rasio aspek potret (3:5) */
+    padding-bottom: var(--image-aspect-ratio); 
+    height: 0; 
+    margin: 10px auto 20px auto; 
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    border: 3px solid rgba(0, 238, 255, 0.5);
+    background: var(--bg-color);
+}
+
+/* PENTING: Menimpa rasio aspek untuk tampilan Horizontal/Desktop (16:9) */
+.carousel-wrapper.carousel-horizontal {
+    padding-bottom: var(--horizontal-aspect-ratio);
+}
+
+.carousel-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.app-screenshot {
+    width: 100%;
+    height: 100%; 
+    /* Gunakan 'contain' agar gambar tidak terdistorsi di dalam wrapper */
+    object-fit: contain; 
+    display: block;
+    cursor: pointer;
+}
+
+/* Tombol Navigasi */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+    line-height: 1;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* Indikator Dots */
+.carousel-dots {
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(31, 36, 45, 0.7);
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 3px;
+    background-color: #555;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease, transform 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--main-color);
+    transform: scale(1.2);
+}
+
+
+/* --- Modal (Lightbox) Styling --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 20px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.95);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 450px; /* Maks lebar modal untuk gambar mobile (default) */
+}
+
+/* Perbaikan untuk tampilan gambar Horizontal di modal */
+.modal-content[src*="800x450"], .modal-content[src*="1200x675"] {
+    max-width: 900px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--main-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media Queries untuk responsivitas */
+@media (max-width: 1200px) {
+    .projects-grid {
+        /* Pindah ke 2 kolom jika lebar layar menurun */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        /* Pindah ke 1 kolom di layar mobile */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.4rem;
+    }
+    .back-link {
+        margin-left: 0;
+    }
+}

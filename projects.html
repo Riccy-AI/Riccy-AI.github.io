@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Portal Vigenesisa</title>
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Struktur agar card bisa tampil sejajar (Flex container) -->
+        <div class="projects-grid"> 
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Profile</a>
+            <h2 class="heading">My <span>Mobile Projects</span></h2>
+            <p class="sub-heading">Berikut adalah tampilan dan fitur utama aplikasi Mobile yang saya kembangkan.</p>
+
+            <!-- START: PROJECT CARD UTAMA -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Portal Vigenesia (Admin & User)</h4>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Flutter</span>
+                        <span class="tech-badge">Dart</span>
+                        <span class="tech-badge">Laravel (Backend)</span>
+                    </div>
+                </div>
+                
+                <!-- START: CAROUSEL MOBILE SCREENSHOTS -->
+                <!-- Ukuran carousel telah disesuaikan di CSS agar lebih ringkas -->
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <!-- Slide 1: Login -->
+                        <div class="carousel-slide">
+                            <img src="img/projects/loginscreen.png" alt="Login Screen" class="app-screenshot" onclick="openModal('img/projects/loginscreen.png')">
+                        </div>
+                        <!-- Slide 2: Register -->
+                        <div class="carousel-slide">
+                            <img src="img/projects/registerscreen.png" alt="Register Screen" class="app-screenshot" onclick="openModal('img/projects/registerscreen.png')">
+                        </div>
+                        <!-- Slide 3: Home/User -->
+                        <div class="carousel-slide">
+                            <img src="img/projects/homeScreen.png" alt="Home Screen" class="app-screenshot" onclick="openModal('img/projects/homeScreen.png')">
+                        </div>
+                        <!-- Slide 4: Admin Profile -->
+                        <div class="carousel-slide">
+                            <img src="img/projects/adminProfileScreen.png" alt="Admin Profile Screen" class="app-screenshot" onclick="openModal('img/projects/adminProfileScreen.png')">
+                        </div>
+                        <!-- Slide 5: Edit Article -->
+                        <div class="carousel-slide">
+                            <img src="img/projects/editArticleScreen.png" alt="Edit Article Screen" class="app-screenshot" onclick="openModal('img/projects/editArticleScreen.png')">
+                        </div>
+                        <!-- Slide 6: Create Article -->
+                        <div class="carousel-slide">
+                            <img src="img/projects/articleCreateScreen.png" alt="Create Article Screen" class="app-screenshot" onclick="openModal('img/projects/articleCreateScreen.png')">
+                        </div>
+                        <!-- Slide 7: Edit Profile -->
+                        <div class="carousel-slide">
+                            <img src="img/projects/editProfileScreen.png" alt="Edit Profile Screen" class="app-screenshot" onclick="openModal('img/projects/editProfileScreen.png')">
+                        </div>
+                        <!-- Slide 8: Admin Article Popup -->
+                        <div class="carousel-slide">
+                            <img src="img/projects/adminArticle.png" alt="Admin Article Options" class="app-screenshot" onclick="openModal('img/projects/adminArticle.png')">
+                        </div>
+                    </div>
+                    
+                    <!-- Tombol Navigasi -->
+                    <button class="carousel-btn prev" onclick="moveSlide(-1)">&leftarrow;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(1)">&rightarrow;</button>
+                    
+                    <!-- Indikator Slide (Dots) -->
+                    <div class="carousel-dots"></div>
+                </div>
+                <!-- END: CAROUSEL MOBILE SCREENSHOTS -->
+                
+                <p class="project-description">Aplikasi portal berita/artikel kampus yang memfasilitasi pengguna untuk membaca, serta admin untuk mengelola (CRUD) artikel, user, dan hak akses.</p>
+
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn primary"><i class="fab fa-github"></i> Source Code</a>
+                    <a href="#" target="_blank" class="btn secondary"><i class="fas fa-mobile-alt"></i> Demo Video</a>
+                </div>
+            </div>
+            <!-- END: PROJECT CARD UTAMA -->
+
+            <!-- START: PROJECT CARD CONTOH 2 (Jika Anda memiliki project lain) -->
+            <!-- Duplikasi project-card di atas untuk menampilkan banyak card sejajar -->
+            <!-- <div class="project-card">
+                <div class="project-header">
+                    <h4>Contoh Project Kedua (Simulasi)</h4>
+                    <div class="tech-stack">
+                        <span class="tech-badge">React Native</span>
+                        <span class="tech-badge">Firebase</span>
+                    </div>
+                </div> -->
+                
+                <!-- Gunakan carousel yang sama atau ganti dengan gambar placeholder jika belum ada -->
+                <!-- <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="https://placehold.co/300x530/2E2E2E/FFFFFF?text=Project+2+Screenshot+1" alt="Placeholder 1" class="app-screenshot" onclick="openModal('https://placehold.co/300x530/2E2E2E/FFFFFF?text=Project+2+Screenshot+1')">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="https://placehold.co/300x530/4A4A4A/FFFFFF?text=Project+2+Screenshot+2" alt="Placeholder 2" class="app-screenshot" onclick="openModal('https://placehold.co/300x530/4A4A4A/FFFFFF?text=Project+2+Screenshot+2')">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="moveSlide(-1)">&leftarrow;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(1)">&rightarrow;</button>
+                    <div class="carousel-dots"></div>
+                </div>
+                
+                <p class="project-description">Deskripsi singkat mengenai project kedua ini. Misalnya, aplikasi manajemen jadwal kuliah.</p>
+
+                <div class="project-links">
+                    <a href="#" target="_blank" class="btn primary"><i class="fab fa-github"></i> Source Code</a>
+                    <a href="#" target="_blank" class="btn secondary"><i class="fas fa-mobile-alt"></i> Demo Video</a>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+
+    <!-- MODAL (Lightbox) -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="js/projects.js"></script>
+</body>
+</html>
