@@ -423,7 +423,7 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(0, 238, 255, 0.1);
     width: 100%;
-    max-width: 450px; /* Lebar maksimum kartu */
+    max-width: 900px; /* Lebar maksimum kartu */
     display: flex;
     flex-direction: column;
 }
