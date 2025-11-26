@@ -52,3 +52,78 @@ function type() {
 document.addEventListener("DOMContentLoaded", () => {
   type();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("unifiedContactForm");
+  const sendWhatsappBtn = document.getElementById("sendWhatsapp");
+  const sendEmailBtn = document.getElementById("sendEmail");
+
+  // Fungsi utilitas untuk mengambil data dari form
+  function getFormData() {
+    return {
+      name: document.getElementById("senderName").value,
+      email: document.getElementById("senderEmail").value,
+      subject: document.getElementById("messageSubject").value,
+      body: document.getElementById("messageBody").value,
+      emailTo: document.getElementById("emailTo").value,
+      waNumber: document.getElementById("waNumber").value,
+    };
+  }
+
+  // Fungsi untuk validasi dasar
+  function validateForm() {
+    // Kita hanya perlu memastikan input yang 'required' tidak kosong
+    return form.checkValidity();
+  }
+
+  // --- Aksi 1: Kirim via WhatsApp ---
+  sendWhatsappBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (!validateForm()) {
+      form.reportValidity(); // Tampilkan pesan error validasi HTML5
+      return;
+    }
+
+    const data = getFormData();
+
+    let text = `*Pesan dari Portofolio (via WhatsApp)*\n\n`;
+    text += `Nama: ${data.name}\n`;
+    text += `Email Pengirim: ${data.email}\n`;
+    text += `Keperluan: ${data.subject}\n\n`;
+    text += `Pesan:\n${data.body}`;
+
+    const url = `https://wa.me/${data.waNumber}?text=${encodeURIComponent(
+      text
+    )}`;
+
+    window.open(url, "_blank");
+    form.reset();
+  });
+
+  // --- Aksi 2: Kirim via Email (mailto:) ---
+  sendEmailBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (!validateForm()) {
+      form.reportValidity(); // Tampilkan pesan error validasi HTML5
+      return;
+    }
+
+    const data = getFormData();
+
+    let emailBody = `Halo, Anda mendapat pesan baru.\n\n`;
+    emailBody += `Dari: ${data.name} <${data.email}>\n\n`;
+    emailBody += `Pesan:\n${data.body}\n\n`;
+    emailBody += `--- (Dikirim dari formulir kontak portofolio)`;
+
+    // Mengkodekan URL mailto:
+    const subjectEncoded = encodeURIComponent(
+      `[Portofolio Kontak] ${data.subject}`
+    );
+    const bodyEncoded = encodeURIComponent(emailBody);
+
+    const mailtoLink = `mailto:${data.emailTo}?subject=${subjectEncoded}&body=${bodyEncoded}`;
+
+    window.location.href = mailtoLink;
+    form.reset();
+  });
+});

@@ -11,7 +11,7 @@
 <body>
     
     <header class="header">
-        <a href="#" class="logo">Riccy.Dev</a>
+        <a href="#" class="logo">Riccy.dev</a>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
@@ -52,8 +52,9 @@
     <section class="about" id="about">
         <h2 class="heading">About <span>Me</span></h2>
         <div class="about-content">
-            <h3>Undergraduate Student & Developer</h3>
             <p>Undergraduate student pursuing a Bachelor's degree in Information Systems, possessing a solid foundation in core software engineering concepts. Familiar with the fundamentals of Web Development (PHP, JavaScript, HTML, CSS) and Android Development (Flutter, Kotlin). Eager to further develop analytical and technical skills within a professional setting. Ready to join a cross-functional project team, learn new systems, and contribute to the maintenance and optimization of services for your company.</p>
+            <h3 class="heading">
+                <span>Thank you for visiting, and I hope to have the opportunity to learn on your project or company.</span></h3>
             <a href="projects.html" class="btn primary">My Projects</a>
         </div>
     </section>
@@ -86,13 +87,71 @@
                 <div class="skill"><img src="img/profile/flutter.jpeg" alt="Flutter"><p>Flutter</p></div>
             </div>
         </div>
+        <div class="carousel-container-reverse">
+            <div class="skills-list-reverse">
+                <div class="skill"><img src="img/profile/html-5.png" alt="HTML5"><p>HTML5</p></div>
+                <div class="skill"><img src="img/profile/css-3.png" alt="CSS3"><p>CSS3</p></div>
+                <div class="skill"><img src="img/profile/js.png" alt="JavaScript"><p>JavaScript</p></div>
+                <div class="skill"><img src="img/profile/php.png" alt="PHP"><p>PHP</p></div>
+                <div class="skill"><img src="img/profile/dart.jpeg" alt="Dart"><p>Dart</p></div>
+                <div class="skill"><img src="img/profile/kotlin.png" alt="Kotlin"><p>Kotlin</p></div>
+                <div class="skill"><img src="img/profile/mysql.png" alt="MySQL"><p>MySQL</p></div>
+                <div class="skill"><img src="img/profile/ci3.png" alt="CodeIgniter 3"><p>CI 3</p></div>
+                <div class="skill"><img src="img/profile/laravel.png" alt="Laravel"><p>Laravel</p></div>
+                <div class="skill"><img src="img/profile/flutter.jpeg" alt="Flutter"><p>Flutter</p></div>
+                
+                <div class="skill"><img src="img/profile/html-5.png" alt="HTML5"><p>HTML5</p></div>
+                <div class="skill"><img src="img/profile/css-3.png" alt="CSS3"><p>CSS3</p></div>
+                <div class="skill"><img src="img/profile/js.png" alt="JavaScript"><p>JavaScript</p></div>
+                <div class="skill"><img src="img/profile/php.png" alt="PHP"><p>PHP</p></div>
+                <div class="skill"><img src="img/profile/dart.jpeg" alt="Dart"><p>Dart</p></div>
+                <div class="skill"><img src="img/profile/kotlin.png" alt="Kotlin"><p>Kotlin</p></div>
+                <div class="skill"><img src="img/profile/mysql.png" alt="MySQL"><p>MySQL</p></div>
+                <div class="skill"><img src="img/profile/ci3.png" alt="CodeIgniter 3"><p>CI 3</p></div>
+                <div class="skill"><img src="img/profile/laravel.png" alt="Laravel"><p>Laravel</p></div>
+                <div class="skill"><img src="img/profile/flutter.jpeg" alt="Flutter"><p>Flutter</p></div>
+            </div>
+        </div>
         
     </section>
 
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me</span></h2>
-        <p class="contact-text">Feel free to reach out or connect with me on my social media!</p>
-        </section>
+<!-- ... bagian-bagian halaman lainnya ... -->
+
+<section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me</span></h2>
+    <p class="contact-text">Feel free to reach out or connect with me using the form below. Choose how you want to send the message!</p>
+
+    <!-- CONTAINER TUNGGAL UNTUK FORMULIR -->
+    <div class="form-container">
+        
+        <!-- FORMULIR TUNGGAL DENGAN DUA TOMBOL KIRIM -->
+        <div class="contact-card single-form">
+            <h3>Please fill out the form below</h3>
+            <form id="unifiedContactForm">
+                <div class="input-box">
+                    <input type="text" id="senderName" placeholder="Full Name" required>
+                    <input type="email" id="senderEmail" placeholder="Your Email" required>
+                </div>
+                <input type="text" id="messageSubject" placeholder="Subject / Purpose" required>
+                <textarea id="messageBody" cols="30" rows="6" placeholder="Message Content" required></textarea>
+                
+                <!-- DATA TUJUAN (Silakan ganti dengan data Anda) -->
+                <input type="hidden" id="emailTo" value="riccywidjhaya00@gmail.com"> 
+                <input type="hidden" id="waNumber" value="6285717663930"> 
+                
+                <div class="button-group">
+                    <button type="button" id="sendWhatsapp" class="btn primary">
+                        <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                    </button>
+                    <button type="button" id="sendEmail" class="btn secondary">
+                        <i class="fas fa-envelope"></i> Send via Email
+                    </button>
+                </div>
+                <small>Pilih salah satu tombol di atas untuk mengirim pesan.</small>
+            </form>
+        </div>
+    </div>
+</section>
 
 
     <footer class="footer">

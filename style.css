@@ -199,7 +199,7 @@ section {
 }
 
 .about-content p {
-    font-size: 1.6rem;
+    font-size: 2rem;
     margin-bottom: 3rem;
 }
 
@@ -215,6 +215,12 @@ section {
     max-height: 100px;
     margin-top: 3rem;
 }
+.carousel-container-reverse {
+    overflow: hidden;
+    width: 100%;
+    max-height: 100px;
+    margin-top: 3rem;
+}
 
 .skills-list {
     display: flex;
@@ -222,9 +228,12 @@ section {
     animation: scroll-left 40s linear infinite;
 }
 
-.skills-list:hover {
-    animation-play-state: paused;
+.skills-list-reverse {
+    display: flex;
+    width: max-content;
+    animation: scroll-right 40s linear infinite;
 }
+
 
 .skill {
     text-align: center;
@@ -254,6 +263,14 @@ section {
     }
     100% {
         transform: translateX(-50%);
+    }
+}
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -370,5 +387,123 @@ section {
 
     .about {
         padding: 10rem 4%;
+    }
+}
+
+/* Tambahkan ke bagian bawah file CSS Anda */
+
+/* --- Contact Section --- */
+.contact {
+    padding: 8rem 7% 5rem;
+    background: var(--bg-color); /* Pastikan ini sesuai dengan background halaman */
+}
+
+.contact .heading {
+    margin-bottom: 2rem;
+}
+
+.contact-text {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #ccc;
+    margin-bottom: 3rem;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Agar responsif di mobile */
+}
+
+.contact-card {
+    background: var(--second-bg-color);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 238, 255, 0.1);
+    width: 100%;
+    max-width: 450px; /* Lebar maksimum kartu */
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card h3 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-card .input-box {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-card input,
+.contact-card textarea {
+    width: 100%;
+    padding: 15px;
+    background: var(--bg-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 8px var(--main-color);
+    outline: none;
+}
+
+.contact-card textarea {
+    resize: vertical;
+}
+
+.contact-card .btn {
+    margin-top: 10px;
+    padding: 15px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+}
+
+.contact-card small {
+    font-size: 1.2rem;
+    color: #888;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Responsiveness for Contact Form */
+@media (max-width: 991px) {
+    .contact {
+        padding: 5rem 5% 3rem;
+    }
+    .form-container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        max-width: 100%;
+    }
+    .contact-card .input-box {
+        flex-direction: column;
+        gap: 0;
+    }
+    .contact-card input {
+        margin-bottom: 15px;
     }
 }
