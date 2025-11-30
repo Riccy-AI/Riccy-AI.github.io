@@ -76,31 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return form.checkValidity();
   }
 
-  // --- Aksi 1: Kirim via WhatsApp ---
-  sendWhatsappBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (!validateForm()) {
-      form.reportValidity(); // Tampilkan pesan error validasi HTML5
-      return;
-    }
-
-    const data = getFormData();
-
-    let text = `*Pesan dari Portofolio (via WhatsApp)*\n\n`;
-    text += `Nama: ${data.name}\n`;
-    text += `Email Pengirim: ${data.email}\n`;
-    text += `Keperluan: ${data.subject}\n\n`;
-    text += `Pesan:\n${data.body}`;
-
-    const url = `https://wa.me/${data.waNumber}?text=${encodeURIComponent(
-      text
-    )}`;
-
-    window.open(url, "_blank");
-    form.reset();
-  });
-
-  // --- Aksi 2: Kirim via Email (mailto:) ---
+  // --- Aksi 2: Kirim via Email (menggunakan EmailJS) ---
   sendEmailBtn.addEventListener("click", function (e) {
     e.preventDefault();
     if (!validateForm()) {
@@ -110,20 +86,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const data = getFormData();
 
-    let emailBody = `Halo, Anda mendapat pesan baru.\n\n`;
-    emailBody += `Dari: ${data.name} <${data.email}>\n\n`;
-    emailBody += `Pesan:\n${data.body}\n\n`;
-    emailBody += `--- (Dikirim dari formulir kontak portofolio)`;
+    // Validasi tujuan email
+    const emailTo = (data.emailTo || "").trim();
+    if (!emailTo) {
+      alert("Alamat email tujuan belum dikonfigurasi.");
+      return;
+    }
 
-    // Mengkodekan URL mailto:
-    const subjectEncoded = encodeURIComponent(
-      `[Portofolio Kontak] ${data.subject}`
+    const templateParams = {
+      to_email: emailTo,
+      from_name: data.name,
+      from_email: data.email,
+      subject: data.subject,
+      message: data.body,
+    };
+
+    // Ganti 'YOUR_SERVICE_ID' dan 'YOUR_TEMPLATE_ID' dengan nilai dari EmailJS
+    emailjs.send("service_wlspwwc", "template_hjxre1h", templateParams).then(
+      function (response) {
+        alert("Pesan berhasil dikirim. Terima kasih!");
+        form.reset();
+      },
+      function (error) {
+        alert(
+          "Gagal mengirim pesan. Coba lagi atau gunakan WhatsApp. Error: " +
+            (error.text || error)
+        );
+      }
     );
-    const bodyEncoded = encodeURIComponent(emailBody);
-
-    const mailtoLink = `mailto:${data.emailTo}?subject=${subjectEncoded}&body=${bodyEncoded}`;
-
-    window.location.href = mailtoLink;
-    form.reset();
   });
+  // Mengkodekan URL mailto:
+  const subjectEncoded = encodeURIComponent(
+    `[Portofolio Kontak] ${data.subject}`
+  );
+  const bodyEncoded = encodeURIComponent(emailBody);
+
+  // Validasi tujuan email
+  const emailTo = (data.emailTo || "").trim();
+  if (!emailTo) {
+    alert("Alamat email tujuan belum dikonfigurasi.");
+    return;
+  }
+
+  const mailtoLink = `mailto:${emailTo}?subject=${subjectEncoded}&body=${bodyEncoded}`;
+
+  // Buka mailto di tab baru. Perlu diingat: ini hanya membuka klien email pengguna
+  // yang sudah diatur sebagai default. Jika pengguna tidak memiliki mail client,
+  // email tidak akan terkirim otomatis.
+  try {
+    window.open(mailtoLink, "_blank");
+  } catch (err) {
+    // Fallback: set href agar setidaknya browser mencoba membuka handler mail
+    window.location.href = mailtoLink;
+  }
+
+  // Informasi singkat ke user untuk membantu troubleshooting
+  setTimeout(() => {
+    alert(
+      "Form telah menyiapkan email di klien mail Anda. Jika tidak muncul, pastikan Anda memiliki aplikasi email default yang terpasang atau gunakan layanan pengiriman email server-side seperti EmailJS atau Formspree."
+    );
+  }, 500);
+
+  form.reset();
 });
