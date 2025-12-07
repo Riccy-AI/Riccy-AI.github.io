@@ -7,6 +7,9 @@
     <title>Riccy Widjhaya - Portofolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script type="text/javascript" 
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
 </head>
 <body>
     
@@ -163,13 +166,11 @@
         </div>
     </footer>
 
-    <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
     <script>
-        (function(){
-            if (window.emailjs) {
-                emailjs.init("service_wlspwwc");
-            }
-        })();
+        // Inisialisasi EmailJS dengan public key
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init("DuM28_F-4MgN3oFhF");
+        }
     </script>
     <script src="js/script.js"></script>
 </body>

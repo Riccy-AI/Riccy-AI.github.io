@@ -76,6 +76,23 @@ document.addEventListener("DOMContentLoaded", function () {
     return form.checkValidity();
   }
 
+  // Fungsi untuk menunggu EmailJS siap dengan timeout
+  function waitForEmailJS(maxWait = 5000) {
+    return new Promise((resolve) => {
+      const startTime = Date.now();
+      const check = setInterval(() => {
+        if (typeof emailjs !== "undefined") {
+          clearInterval(check);
+          resolve(true);
+        }
+        if (Date.now() - startTime > maxWait) {
+          clearInterval(check);
+          resolve(false);
+        }
+      }, 100);
+    });
+  }
+
   // --- Aksi 1: Kirim via WhatsApp ---
   sendWhatsappBtn.addEventListener("click", function (e) {
     e.preventDefault();
@@ -110,10 +127,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // --- Aksi 2: Kirim via Email (menggunakan EmailJS) ---
-  sendEmailBtn.addEventListener("click", function (e) {
+  sendEmailBtn.addEventListener("click", async function (e) {
     e.preventDefault();
     if (!validateForm()) {
       form.reportValidity();
+      return;
+    }
+
+    // Tunggu EmailJS siap (max 5 detik)
+    const isEmailJSReady = await waitForEmailJS();
+
+    if (!isEmailJSReady) {
+      alert(
+        "Layanan email tidak tersedia. Gunakan WhatsApp atau coba lagi nanti.\n\n" +
+          "Alternatif: Hubungi saya via WhatsApp untuk response lebih cepat."
+      );
       return;
     }
 
@@ -134,18 +162,23 @@ document.addEventListener("DOMContentLoaded", function () {
       message: data.body,
     };
 
-    // Kirim email menggunakan EmailJS
-    emailjs.send("service_wlspwwc", "template_hjxre1h", templateParams).then(
-      function (response) {
-        alert("Pesan berhasil dikirim. Terima kasih!");
-        form.reset();
-      },
-      function (error) {
-        alert(
-          "Gagal mengirim pesan. Coba lagi atau gunakan WhatsApp. Error: " +
-            (error.text || error)
-        );
-      }
-    );
+    try {
+      // Kirim email menggunakan EmailJS
+      const response = await emailjs.send(
+        "service_wlspwwc",
+        "template_hjxre1h",
+        templateParams
+      );
+      alert("Pesan berhasil dikirim. Terima kasih!");
+      form.reset();
+    } catch (error) {
+      alert(
+        "Gagal mengirim pesan.\n\n" +
+          "Error: " +
+          (error.text || error.message || error) +
+          "\n\n" +
+          "Silakan gunakan tombol WhatsApp atau coba lagi."
+      );
+    }
   });
 });
