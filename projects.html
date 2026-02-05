@@ -12,8 +12,8 @@
         <!-- Struktur agar card bisa tampil sejajar (Flex container) -->
         <div class="projects-grid"> 
             <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Profile</a>
-            <h2 class="heading">My <span>Mobile Projects</span></h2>
-            <p class="sub-heading">Berikut adalah tampilan dan fitur utama aplikasi Mobile yang saya kembangkan.</p>
+            <h2 class="heading">My <span>Projects</span></h2>
+            <p class="sub-heading">Berikut adalah Project Aplikasi yang saya kerjakan.</p>
 
             <!-- START: PROJECT CARD UTAMA -->
             <div class="project-card">
@@ -27,7 +27,6 @@
                 </div>
                 
                 <!-- START: CAROUSEL MOBILE SCREENSHOTS -->
-                <!-- Ukuran carousel telah disesuaikan di CSS agar lebih ringkas -->
                 <div class="carousel-wrapper">
                     <div class="carousel-track">
                         <!-- Slide 1: Login -->
@@ -73,49 +72,95 @@
                 </div>
                 <!-- END: CAROUSEL MOBILE SCREENSHOTS -->
                 
-                <p class="project-description">Aplikasi portal berita/artikel kampus yang memfasilitasi pengguna untuk membaca, serta admin untuk mengelola (CRUD) artikel, user, dan hak akses.</p>
+                <p class="project-description">Aplikasi portal berita/artikel kampus yang memfasilitasi pengguna untuk membaca, serta admin untuk mengelola (CRUD) artikel, user, dan hak akses menggunakan Backend Laravel.</p>
 
                 <div class="project-links">
-                    <a href="#" target="_blank" class="btn primary"><i class="fab fa-github"></i> Source Code</a>
-                    <a href="#" target="_blank" class="btn secondary"><i class="fas fa-mobile-alt"></i> Demo Video</a>
+                    <a href="https://github.com/Riccy-AI/vigenesia-portalberita.git" target="_blank" class="btn primary"><i class="fab fa-github"></i> Source Code</a>
                 </div>
             </div>
             <!-- END: PROJECT CARD UTAMA -->
 
-            <!-- START: PROJECT CARD CONTOH 2 (Jika Anda memiliki project lain) -->
-            <!-- Duplikasi project-card di atas untuk menampilkan banyak card sejajar -->
-            <!-- <div class="project-card">
+            <!-- START: PROJECT CARD 2 -->
+            <div class="project-card">
                 <div class="project-header">
-                    <h4>Contoh Project Kedua (Simulasi)</h4>
+                    <h4>Portal Berita MandiriNews</h4>
                     <div class="tech-stack">
-                        <span class="tech-badge">React Native</span>
-                        <span class="tech-badge">Firebase</span>
+                        <span class="tech-badge">Kotlin</span>
                     </div>
-                </div> -->
+                </div>
                 
-                <!-- Gunakan carousel yang sama atau ganti dengan gambar placeholder jika belum ada -->
-                <!-- <div class="carousel-wrapper">
+                <!-- START: CAROUSEL MOBILE SCREENSHOTS -->
+                <div class="carousel-wrapper">
                     <div class="carousel-track">
+                        <!-- Slide 1: Main UI -->
                         <div class="carousel-slide">
-                            <img src="https://placehold.co/300x530/2E2E2E/FFFFFF?text=Project+2+Screenshot+1" alt="Placeholder 1" class="app-screenshot" onclick="openModal('https://placehold.co/300x530/2E2E2E/FFFFFF?text=Project+2+Screenshot+1')">
+                            <img src="img/mandirinews/MandiriNews.png" alt="Main UI" class="app-screenshot" onclick="openModal('img/mandirinews/MandiriNews.png')">
                         </div>
+                        <!-- Slide 2: Main UI 2 -->
                         <div class="carousel-slide">
-                            <img src="https://placehold.co/300x530/4A4A4A/FFFFFF?text=Project+2+Screenshot+2" alt="Placeholder 2" class="app-screenshot" onclick="openModal('https://placehold.co/300x530/4A4A4A/FFFFFF?text=Project+2+Screenshot+2')">
+                            <img src="img/mandirinews/MandiriNewsMain.png" alt="Main UI 2" class="app-screenshot" onclick="openModal('img/mandirinews/MandiriNewsMain.png')">
                         </div>
                     </div>
+                    
+                    <!-- Tombol Navigasi -->
                     <button class="carousel-btn prev" onclick="moveSlide(-1)">&leftarrow;</button>
                     <button class="carousel-btn next" onclick="moveSlide(1)">&rightarrow;</button>
+                    
+                    <!-- Indikator Slide (Dots) -->
                     <div class="carousel-dots"></div>
                 </div>
+                <!-- END: CAROUSEL MOBILE SCREENSHOTS -->
                 
-                <p class="project-description">Deskripsi singkat mengenai project kedua ini. Misalnya, aplikasi manajemen jadwal kuliah.</p>
+                <p class="project-description">Membuat Aplikasi untuk Submission Bank Mandiri by Rakamin, membuat Portal Berita dengan fecth API dari newsapi.org menggunakan retrofit</p>
 
                 <div class="project-links">
-                    <a href="#" target="_blank" class="btn primary"><i class="fab fa-github"></i> Source Code</a>
-                    <a href="#" target="_blank" class="btn secondary"><i class="fas fa-mobile-alt"></i> Demo Video</a>
+                    <a href="https://github.com/Riccy-AI/MandiriNews.git" target="_blank" class="btn primary"><i class="fab fa-github"></i> Source Code</a>
                 </div>
-            </div> -->
+            </div>
+            <!-- END: PROJECT CARD 2 -->
 
+            <!-- START: PROJECT CARD 3 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Daftar Kuliner Nusantara</h4>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Kotlin</span>
+                    </div>
+                </div>
+                
+                <!-- START: CAROUSEL MOBILE SCREENSHOTS -->
+                <div class="carousel-wrapper">
+                    <div class="carousel-track">
+                        <!-- Slide 1: Main UI -->
+                        <div class="carousel-slide">
+                            <img src="img/kulinernusantara/KulinerNusantara1.png" alt="Main UI" class="app-screenshot" onclick="openModal('img/kulinernusantara/KulinerNusantara1.png')">
+                        </div>
+                        <!-- Slide 2: Detail -->
+                        <div class="carousel-slide">
+                            <img src="img/kulinernusantara/KulinerNusantaraDetail.png" alt="Detail UI" class="app-screenshot" onclick="openModal('img/kulinernusantara/KulinerNusantaraDetail.png')">
+                        </div>
+                        <!-- Slide 3: About -->
+                        <div class="carousel-slide">
+                            <img src="img/kulinernusantara/KulinerNusantaraAbout.png" alt="About UI" class="app-screenshot" onclick="openModal('img/kulinernusantara/KulinerNusantaraAbout.png')">
+                        </div>
+                    </div>
+                    
+                    <!-- Tombol Navigasi -->
+                    <button class="carousel-btn prev" onclick="moveSlide(-1)">&leftarrow;</button>
+                    <button class="carousel-btn next" onclick="moveSlide(1)">&rightarrow;</button>
+                    
+                    <!-- Indikator Slide (Dots) -->
+                    <div class="carousel-dots"></div>
+                </div>
+                <!-- END: CAROUSEL MOBILE SCREENSHOTS -->
+                
+                <p class="project-description">Aplikasi List Kuliner Nusantara dengan Constraint Layout</p>
+
+                <div class="project-links">
+                    <a href="https://github.com/Riccy-AI/KulinerNusantara.git" target="_blank" class="btn primary"><i class="fab fa-github"></i> Source Code</a>
+                </div>
+            </div>
+            <!-- END: PROJECT CARD 2 -->
         </div>
     </div>
 
